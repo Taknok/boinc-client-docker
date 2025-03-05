@@ -1,4 +1,4 @@
-FROM ubuntu:22.04
+FROM ubuntu:latest
 
 LABEL maintainer="BOINC" \
       description="Ubuntu base image for lightweight BOINC client."
@@ -7,7 +7,7 @@ LABEL maintainer="BOINC" \
 ENV BOINC_GUI_RPC_PASSWORD="123" \
     BOINC_REMOTE_HOST="127.0.0.1" \
     BOINC_CMD_LINE_OPTIONS="" \
-	DEBIAN_FRONTEND=noninteractive
+    DEBIAN_FRONTEND=noninteractive
 
 # Copy files
 COPY bin/ /usr/bin/
@@ -23,7 +23,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Install PPA dependency
     software-properties-common \
 # Install Time Zone Database
-	tzdata && \
+    tzdata && \
 # Install BOINC Client
     add-apt-repository -y ppa:costamagnagianfranco/boinc && \
     apt-get update && apt-get install -y --no-install-recommends \
