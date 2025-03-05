@@ -7,7 +7,7 @@ LABEL maintainer="BOINC" \
 ENV BOINC_GUI_RPC_PASSWORD="123" \
     BOINC_REMOTE_HOST="127.0.0.1" \
     BOINC_CMD_LINE_OPTIONS="" \
-	DEBIAN_FRONTEND=noninteractive
+    DEBIAN_FRONTEND=noninteractive
 
 # Copy files
 COPY bin/ /usr/bin/
